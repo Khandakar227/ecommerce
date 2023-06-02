@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
 import { validationResult } from "express-validator";
-import bcrypt from "bcryptjs";
+
 import jwt from "jsonwebtoken";
 import User from "../models/user";
+import { checkPasswordMatch, hashPassword } from "../libs";
 
 export const signUp = async (req: Request, res: Response) => {
     try {
@@ -19,7 +20,7 @@ export const signUp = async (req: Request, res: Response) => {
         if (checkEmail) return res.status(400).json({ message: "Email is already in use" });
 
 
-        const hash = await bcrypt.hash(password, 10); //Hash the password
+        const hash = hashPassword(password); //Hash the password
 
         const user = new User({
             email,
@@ -64,7 +65,7 @@ export const login = async (req: Request, res: Response) => {
         const user = await User.findOne({ email });
         if (!user) return res.status(401).json({ message: "Incorrect email or password" });
 
-        const isPasswordMatched = await bcrypt.compare(password, user.password as string)
+        const isPasswordMatched = checkPasswordMatch(password, user.password as string)
 
         if (!isPasswordMatched) return res.status(401).json({ message: "Incorrect email or password" });
 

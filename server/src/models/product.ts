@@ -8,7 +8,7 @@ const productModel = new Schema({
     price: { type: Number, required: true },
     available: { type: Number, required: true },
     sold: { type: Number, default: 0 },
-    unit: { type: String, required: true },
+    unit: { type: String, default: 'pcs' },
     published: { type: Boolean, default: false, required: true },
     discount: { type: Number },
     rating: { type: Number, default: 0 },
@@ -27,7 +27,7 @@ const productModel = new Schema({
             },
         }
     ],
-    tags: [{ type: String, required: true }],
+    tags: [String],
 });
 
 export default model("Product", productModel);

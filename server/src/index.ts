@@ -4,6 +4,7 @@ import { connect } from "mongoose";
 import cookieParser from "cookie-parser";
 import userRoutes from './routes/user';
 import { csrfProtect } from './libs';
+import productRoutes from './routes/products';
 
 dotenv.config();
 
@@ -22,7 +23,9 @@ connect(process.env.MONGODB_URL as string,
     app.use(cookieParser());
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
+    
     app.use('/user', userRoutes);
+    app.use('/product', productRoutes);
 
 // this will send a csrfToken to the browser which needs to be saved and send on certain rquests (POST, UPDATE, DELETE)
 app.get('/', csrfProtect, (req: Request, res: Response) => {
