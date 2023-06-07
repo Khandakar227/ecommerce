@@ -1,13 +1,33 @@
 import { Request, Response } from "express";
 import Product from "../models/product";
 import { validationResult } from "express-validator";
+import { QueryParameters, parseQuery } from "../libs";
+
 
 export const getProducts = async (req: Request, res: Response) => {
     try {
-        const { } = req.query;
+        const { limit, sortBy, sortOrder, offset, mode } = req.query as QueryParameters;
+
+        // Process the query parameters
+        const query = parseQuery(req.query);
+        
+        // Handle sort query
+        let sortQuery: any = {};
+        if (sortBy) sortQuery[sortBy] = sortOrder == 'desc' ? -1 : 1;
+        //Handle limit of data
+        let projection = {};
+        if (mode) projection = {title: 1, available: 1, imageSrc: 1, rating: 1, price: 1, discount: 1};
 
         // Get product
-    
+        const products = await Product.find(query, projection)
+            .limit(+(limit as string) || 20)
+            .skip(+(offset as string) || 0)
+            .sort(sortQuery);
+        
+        const count = await Product.find(query)
+            .countDocuments();
+
+        res.status(200).json({count, products});
     } catch (error) {
         console.log(error);
         res.status(500).json({ message: "Something went wrong" })
@@ -21,17 +41,17 @@ export const addProduct = async (req: Request, res: Response) => {
         if (!errors.isEmpty())
             return res.status(400).json({ errors: errors.array()[0].msg });
 
-        const { title, desc, vendor, category, price, available, sold, unit, published, discount, rating, ratingCount, imageSrc, requireShipping, options, tags } = req.body;
-        
+        const { title, desc, vendor, category, price, available, sold, unit, published, discount, rating, ratingCount, imageSrc, requireShipping, sizes, colors, tags } = req.body;
+
         // Add product
         const product = await Product.create({
-            title, desc, vendor, category, price, available, sold, unit, published, discount, rating, ratingCount, imageSrc, requireShipping, options, tags
+            title, desc, vendor, category, price, available, sold, unit, published, discount, rating, ratingCount, imageSrc, requireShipping, sizes, colors, tags
         });
         await product.save();
 
         console.log(product);
         // console.log(req.body);
-        res.status(201).json({message: "New Product has been created", product});
+        res.status(201).json({ message: "New Product has been created", product });
 
     } catch (error) {
         console.log(error);
@@ -39,16 +59,47 @@ export const addProduct = async (req: Request, res: Response) => {
     }
 }
 
-
-export const getProduct =async (req: Request, res: Response) => {
+export const getProduct = async (req: Request, res: Response) => {
     try {
         const { id } = req.params;
-        
+
         const product = await Product.findById(id as string);
         res.status(200).json(product);
-    
+
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: "Something went wrong" })       
+        res.status(500).json({ message: "Something went wrong" })
+    }
+}
+
+export const updateProduct = async (req: Request, res: Response) => {
+    try {
+        const errors = validationResult(req);
+        if (!errors.isEmpty())
+            return res.status(400).json({ errors: errors.array()[0].msg });
+
+        const { id } = req.params;
+        const { title, desc, vendor, category, price, available, sold, unit, published, discount, rating, ratingCount, imageSrc, requireShipping,  sizes, colors, tags, } = req.body;
+
+        //Update product detail
+        const product = await Product.findByIdAndUpdate(id, {
+            title, desc, vendor, category, price, available, sold, unit, published, discount, rating, ratingCount, imageSrc, requireShipping, sizes, colors, tags
+        });
+
+        res.status(200).json({message: "Success" });
+    } catch (error:any) {
+        console.log(error.message)
+        res.status(500).json({ message: "Something went wrong" });
+    }
+}
+
+export const deleteProduct = async (req: Request, res: Response) => {
+    try {
+        const { id } = req.params;
+        await Product.findByIdAndDelete(id);
+        res.status(200).json({message: "Success"});
+    } catch (error: any) {
+        console.log(error.message)
+        res.status(500).json({ message: "Something went wrong" });
     }
 }

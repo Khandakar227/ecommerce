@@ -19,7 +19,22 @@ export const verifyUserCookie = (req: Request, res: Response, next: NextFunction
     }
 }
 
-const parseCookies = (cookieString: string) => {
+export const checkUser = (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const token = verify(req.cookies['access_token'], process.env.JWT_SECRET_KEY as string);
+        if (token && typeof token !== 'string') {
+            res.locals.user = token;
+            next();
+        } else
+            return res.status(403).json({ message: "Failed to authenticate" });
+        
+    } catch (error:any) {
+        console.log(error.message);
+        return res.status(403).json({ message: "Failed to authenticate" });
+    }
+}
+
+export const parseCookies = (cookieString: string) => {
     let val: { [key: string]: any } = {};
 
     cookieString.split(';').forEach((item) => {

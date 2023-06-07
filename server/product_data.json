@@ -1,335 +1,272 @@
 [
-    {
-        "title": "Handcrafted Bronze Fish",
-        "desc": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-        "vendor": "Hayes, Beer and Baumbach",
-        "category": "Apparel",
-        "price": 714,
-        "quantity": 95,
-        "unit": "pcs",
-        "published": true,
-        "discount": 24,
-        "rating": 3,
-        "ratingCount": 50,
-        "imageSrc": [
-            "https://loremflickr.com/420/600/Apparel?lock=5287000269651968"
-        ],
-        "requireShipping": true,
-        "options": [
-            {
-                "name": "color",
-                "value": [
-                    "#7e466c",
-                    "#140450",
-                    "#452307",
-                    "#0a5d26"
-                ]
-            }
-        ],
-        "tags": [
-            "Licensed",
-            "Sleek",
-            "Gorgeous"
-        ]
-    },
-    {
-        "title": "Incredible Granite Bacon",
-        "desc": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
-        "vendor": "Weissnat - Moen",
-        "category": "Accessories",
-        "price": 911,
-        "quantity": 67,
-        "unit": "pcs",
-        "published": false,
-        "discount": 4,
-        "rating": 0,
-        "ratingCount": 47,
-        "imageSrc": [
-            "https://loremflickr.com/420/600/Accessories?lock=5936959985811456"
-        ],
-        "requireShipping": false,
-        "options": [
-            {
-                "name": "color",
-                "value": [
-                    "#04561a",
-                    "#05423d",
-                    "#450f7d",
-                    "#757d6e"
-                ]
-            }
-        ],
-        "tags": [
-            "Licensed",
-            "Awesome",
-            "Sleek"
-        ]
-    },
-    {
-        "title": "Luxurious Frozen Soap",
-        "desc": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-        "vendor": "Rippin, Marvin and Lind",
-        "category": "Jacket",
-        "price": 93,
-        "quantity": 84,
-        "unit": "pcs",
-        "published": false,
-        "discount": 8,
-        "rating": 2,
-        "ratingCount": 25,
-        "imageSrc": [
-            "https://loremflickr.com/420/600/Jacket?lock=1443711667929088"
-        ],
-        "requireShipping": false,
-        "options": [
-            {
-                "name": "color",
-                "value": [
-                    "#69215c",
-                    "#7f5035",
-                    "#297c0c",
-                    "#501a63"
-                ]
-            }
-        ],
-        "tags": [
-            "Incredible",
-            "Awesome",
-            "Fantastic"
-        ]
-    },
-    {
-        "title": "Bespoke Soft Computer",
-        "desc": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-        "vendor": "Gerhold, Corkery and Wolff",
-        "category": "Pants",
-        "price": 677,
-        "quantity": 66,
-        "unit": "pcs",
-        "published": true,
-        "discount": 7,
-        "rating": 1,
-        "ratingCount": 35,
-        "imageSrc": [
-            "https://loremflickr.com/420/600/Pants?lock=6811755934121984"
-        ],
-        "requireShipping": false,
-        "options": [
-            {
-                "name": "color",
-                "value": [
-                    "#311869",
-                    "#0d7c3c",
-                    "#7e6818",
-                    "#46390f"
-                ]
-            }
-        ],
-        "tags": [
-            "Fantastic",
-            "Unbranded",
-            "Handmade"
-        ]
-    },
-    {
-        "title": "Small Concrete Hat",
-        "desc": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-        "vendor": "Schuster, Bauch and Leffler",
-        "category": "Watch",
-        "price": 41,
-        "quantity": 53,
-        "unit": "pcs",
-        "published": true,
-        "discount": 21,
-        "rating": 0,
-        "ratingCount": 8,
-        "imageSrc": [
-            "https://loremflickr.com/420/600/Watch?lock=1164380012019712"
-        ],
-        "requireShipping": true,
-        "options": [
-            {
-                "name": "color",
-                "value": [
-                    "#0a3121",
-                    "#5a494e",
-                    "#607565",
-                    "#012168"
-                ]
-            }
-        ],
-        "tags": [
-            "Refined",
-            "Small",
-            "Incredible"
-        ]
-    },
-    {
-        "title": "Rustic Soft Ball",
-        "desc": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-        "vendor": "Williamson - Schuster",
-        "category": "Pants",
-        "price": 465,
-        "quantity": 18,
-        "unit": "pcs",
-        "published": false,
-        "discount": 25,
-        "rating": 5,
-        "ratingCount": 38,
-        "imageSrc": [
-            "https://loremflickr.com/420/600/Pants?lock=3918191774400512"
-        ],
-        "requireShipping": false,
-        "options": [
-            {
-                "name": "color",
-                "value": [
-                    "#6d6f79",
-                    "#085065",
-                    "#086c53",
-                    "#3e7a6a"
-                ]
-            }
-        ],
-        "tags": [
-            "Electronic",
-            "Practical",
-            "Oriental"
-        ]
-    },
-    {
-        "title": "Incredible Steel Keyboard",
-        "desc": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-        "vendor": "Lebsack Inc",
-        "category": "Pants",
-        "price": 74,
-        "quantity": 2,
-        "unit": "pcs",
-        "published": true,
-        "discount": 8,
-        "rating": 4,
-        "ratingCount": 9,
-        "imageSrc": [
-            "https://loremflickr.com/420/600/Pants?lock=3666303797690368"
-        ],
-        "requireShipping": true,
-        "options": [
-            {
-                "name": "size",
-                "value": [
-                    "m",
-                    "l",
-                    "xl",
-                    "xxl",
-                    "xxxl"
-                ]
-            }
-        ],
-        "tags": [
-            "Sleek",
-            "Refined",
-            "Modern"
-        ]
-    },
-    {
-        "title": "Handcrafted Wooden Chips",
-        "desc": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-        "vendor": "Johns - Rogahn",
-        "category": "Pants",
-        "price": 761,
-        "quantity": 60,
-        "unit": "pcs",
-        "published": false,
-        "discount": 7,
-        "rating": 4,
-        "ratingCount": 10,
-        "imageSrc": [
-            "https://loremflickr.com/420/600/Pants?lock=5240144953081856"
-        ],
-        "requireShipping": false,
-        "options": [
-            {
-                "name": "color",
-                "value": [
-                    "#020b3b",
-                    "#3e574d",
-                    "#770f38",
-                    "#217559"
-                ]
-            }
-        ],
-        "tags": [
-            "Electronic",
-            "Gorgeous",
-            "Elegant"
-        ]
-    },
-    {
-        "title": "Handcrafted Bronze Car",
-        "desc": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-        "vendor": "Abshire and Sons",
-        "category": "Pants",
-        "price": 522,
-        "quantity": 81,
-        "unit": "pcs",
-        "published": true,
-        "discount": 6,
-        "rating": 5,
-        "ratingCount": 49,
-        "imageSrc": [
-            "https://loremflickr.com/420/600/Pants?lock=6975228297084928"
-        ],
-        "requireShipping": false,
-        "options": [
-            {
-                "name": "size",
-                "value": [
-                    "m",
-                    "l",
-                    "xl",
-                    "xxl",
-                    "xxxl"
-                ]
-            }
-        ],
-        "tags": [
-            "Ergonomic",
-            "Bespoke",
-            "Ergonomic"
-        ]
-    },
-    {
-        "title": "Bespoke Wooden Pizza",
-        "desc": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-        "vendor": "Ruecker - Wisoky",
-        "category": "TShirts",
-        "price": 953,
-        "quantity": 48,
-        "unit": "pcs",
-        "published": true,
-        "discount": 3,
-        "rating": 5,
-        "ratingCount": 38,
-        "imageSrc": [
-            "https://loremflickr.com/420/600/TShirts?lock=3773542149652480"
-        ],
-        "requireShipping": false,
-        "options": [
-            {
-                "name": "size",
-                "value": [
-                    "m",
-                    "l",
-                    "xl",
-                    "xxl",
-                    "xxxl"
-                ]
-            }
-        ],
-        "tags": [
-            "Handcrafted",
-            "Electronic",
-            "Practical"
-        ]
-    }
+  {
+    "title": "Incredible Concrete Soap",
+    "desc": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+    "vendor": "Kuhic - Halvorson",
+    "category": "Pants",
+    "price": 241,
+    "available": 29,
+    "unit": "pcs",
+    "published": false,
+    "discount": 29,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=2049236849917952"],
+    "requireShipping": false,
+    "sizes": [
+      { "name": "m", "priceDiff": 0, "quantity": 9 },
+      { "name": "l", "priceDiff": 2, "quantity": 5 },
+      { "name": "xl", "priceDiff": 3, "quantity": 5 },
+      { "name": "xxl", "priceDiff": 5, "quantity": 5 },
+      { "name": "xxxl", "priceDiff": 10, "quantity": 5 }
+    ],
+    "colors": [
+      { "name": "#186371", "quantity": 7 },
+      { "name": "#6b0a67", "quantity": 8 },
+      { "name": "#014946", "quantity": 7 },
+      { "name": "#672510", "quantity": 7 }
+    ],
+    "tags": ["Handcrafted", "Awesome", "Intelligent"]
+  },
+  {
+    "title": "Unbranded Metal Shoes",
+    "desc": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+    "vendor": "Jast, Weimann and Doyle",
+    "category": "Apparel",
+    "price": 797,
+    "available": 91,
+    "unit": "pcs",
+    "published": true,
+    "discount": 5,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=5311337582297088"],
+    "requireShipping": true,
+    "sizes": [
+      { "name": "m", "priceDiff": 0, "quantity": 19 },
+      { "name": "l", "priceDiff": 2, "quantity": 18 },
+      { "name": "xl", "priceDiff": 3, "quantity": 18 },
+      { "name": "xxl", "priceDiff": 5, "quantity": 18 },
+      { "name": "xxxl", "priceDiff": 10, "quantity": 18 }
+    ],
+    "colors": [
+      { "name": "#153506", "quantity": 22 },
+      { "name": "#53614f", "quantity": 25 },
+      { "name": "#4b7e37", "quantity": 22 },
+      { "name": "#67360f", "quantity": 22 }
+    ],
+    "tags": ["Ergonomic", "Intelligent", "Gorgeous"]
+  },
+  {
+    "title": "Unbranded Metal Salad",
+    "desc": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+    "vendor": "Hand - Franecki",
+    "category": "Apparel",
+    "price": 679,
+    "available": 93,
+    "unit": "pcs",
+    "published": true,
+    "discount": 27,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=8541108262928384"],
+    "requireShipping": false,
+    "sizes": [
+      { "name": "m", "priceDiff": 0, "quantity": 21 },
+      { "name": "l", "priceDiff": 2, "quantity": 18 },
+      { "name": "xl", "priceDiff": 3, "quantity": 18 },
+      { "name": "xxl", "priceDiff": 5, "quantity": 18 },
+      { "name": "xxxl", "priceDiff": 10, "quantity": 18 }
+    ],
+    "colors": [
+      { "name": "#6b2705", "quantity": 23 },
+      { "name": "#1c6741", "quantity": 24 },
+      { "name": "#140d20", "quantity": 23 },
+      { "name": "#744735", "quantity": 23 }
+    ],
+    "tags": ["Tasty", "Bespoke", "Refined"]
+  },
+  {
+    "title": "Refined Soft Keyboard",
+    "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+    "vendor": "Runolfsdottir - Medhurst",
+    "category": "Accessories",
+    "price": 383,
+    "available": 30,
+    "unit": "pcs",
+    "published": false,
+    "discount": 5,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=5799507914653696"],
+    "requireShipping": false,
+    "sizes": [
+      { "name": "m", "priceDiff": 0, "quantity": 6 },
+      { "name": "l", "priceDiff": 2, "quantity": 6 },
+      { "name": "xl", "priceDiff": 3, "quantity": 6 },
+      { "name": "xxl", "priceDiff": 5, "quantity": 6 },
+      { "name": "xxxl", "priceDiff": 10, "quantity": 6 }
+    ],
+    "colors": [
+      { "name": "#0d6a36", "quantity": 7 },
+      { "name": "#29400e", "quantity": 9 },
+      { "name": "#1e0d4c", "quantity": 7 },
+      { "name": "#157e73", "quantity": 7 }
+    ],
+    "tags": ["Fantastic", "Tasty", "Modern"]
+  },
+  {
+    "title": "Incredible Soft Chips",
+    "desc": "The Football Is Good For Training And Recreational Purposes",
+    "vendor": "Walsh, Bailey and Beer",
+    "category": "Accessories",
+    "price": 734,
+    "available": 1,
+    "unit": "pcs",
+    "published": false,
+    "discount": 3,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=1145489988780032"],
+    "requireShipping": true,
+    "sizes": [
+      { "name": "m", "priceDiff": 0, "quantity": 1 },
+      { "name": "l", "priceDiff": 2, "quantity": 0 },
+      { "name": "xl", "priceDiff": 3, "quantity": 0 },
+      { "name": "xxl", "priceDiff": 5, "quantity": 0 },
+      { "name": "xxxl", "priceDiff": 10, "quantity": 0 }
+    ],
+    "colors": [
+      { "name": "#41746f", "quantity": 0 },
+      { "name": "#697751", "quantity": 1 },
+      { "name": "#492500", "quantity": 0 },
+      { "name": "#055359", "quantity": 0 }
+    ],
+    "tags": ["Gorgeous", "Small", "Generic"]
+  },
+  {
+    "title": "Bespoke Fresh Tuna",
+    "desc": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+    "vendor": "Littel - Durgan",
+    "category": "Accessories",
+    "price": 920,
+    "available": 21,
+    "unit": "pcs",
+    "published": true,
+    "discount": 18,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=5947531997478912"],
+    "requireShipping": true,
+    "sizes": [
+      { "name": "m", "priceDiff": 0, "quantity": 5 },
+      { "name": "l", "priceDiff": 2, "quantity": 4 },
+      { "name": "xl", "priceDiff": 3, "quantity": 4 },
+      { "name": "xxl", "priceDiff": 5, "quantity": 4 },
+      { "name": "xxxl", "priceDiff": 10, "quantity": 4 }
+    ],
+    "colors": [
+      { "name": "#3b0d0b", "quantity": 5 },
+      { "name": "#755c5c", "quantity": 6 },
+      { "name": "#7e6c00", "quantity": 5 },
+      { "name": "#532b43", "quantity": 5 }
+    ],
+    "tags": ["Awesome", "Small", "Refined"]
+  },
+  {
+    "title": "Generic Fresh Table",
+    "desc": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+    "vendor": "Walker, Simonis and Hilll",
+    "category": "TShirts",
+    "price": 120,
+    "available": 57,
+    "unit": "pcs",
+    "published": true,
+    "discount": 22,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=8179745197916160"],
+    "requireShipping": true,
+    "sizes": [
+      { "name": "m", "priceDiff": 0, "quantity": 13 },
+      { "name": "l", "priceDiff": 2, "quantity": 11 },
+      { "name": "xl", "priceDiff": 3, "quantity": 11 },
+      { "name": "xxl", "priceDiff": 5, "quantity": 11 },
+      { "name": "xxxl", "priceDiff": 10, "quantity": 11 }
+    ],
+    "colors": [
+      { "name": "#4c3765", "quantity": 14 },
+      { "name": "#59004e", "quantity": 15 },
+      { "name": "#7f315e", "quantity": 14 },
+      { "name": "#166c1d", "quantity": 14 }
+    ],
+    "tags": ["Small", "Ergonomic", "Ergonomic"]
+  },
+  {
+    "title": "Elegant Steel Chicken",
+    "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+    "vendor": "Ward Group",
+    "category": "Apparel",
+    "price": 552,
+    "available": 10,
+    "unit": "pcs",
+    "published": false,
+    "discount": 25,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=6604602619199488"],
+    "requireShipping": false,
+    "sizes": [
+      { "name": "m", "priceDiff": 0, "quantity": 2 },
+      { "name": "l", "priceDiff": 2, "quantity": 2 },
+      { "name": "xl", "priceDiff": 3, "quantity": 2 },
+      { "name": "xxl", "priceDiff": 5, "quantity": 2 },
+      { "name": "xxxl", "priceDiff": 10, "quantity": 2 }
+    ],
+    "colors": [
+      { "name": "#54385e", "quantity": 2 },
+      { "name": "#79616c", "quantity": 4 },
+      { "name": "#70620e", "quantity": 2 },
+      { "name": "#1d222a", "quantity": 2 }
+    ],
+    "tags": ["Small", "Unbranded", "Gorgeous"]
+  },
+  {
+    "title": "Electronic Bronze Mouse",
+    "desc": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+    "vendor": "Muller - Padberg",
+    "category": "Watch",
+    "price": 891,
+    "available": 34,
+    "unit": "pcs",
+    "published": false,
+    "discount": 16,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=8628023246979072"],
+    "requireShipping": false,
+    "sizes": [
+      { "name": "m", "priceDiff": 0, "quantity": 10 },
+      { "name": "l", "priceDiff": 2, "quantity": 6 },
+      { "name": "xl", "priceDiff": 3, "quantity": 6 },
+      { "name": "xxl", "priceDiff": 5, "quantity": 6 },
+      { "name": "xxxl", "priceDiff": 10, "quantity": 6 }
+    ],
+    "colors": [
+      { "name": "#546634", "quantity": 8 },
+      { "name": "#21237d", "quantity": 10 },
+      { "name": "#514935", "quantity": 8 },
+      { "name": "#011d07", "quantity": 8 }
+    ],
+    "tags": ["Awesome", "Practical", "Elegant"]
+  },
+  {
+    "title": "Practical Steel Pizza",
+    "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+    "vendor": "Mann and Sons",
+    "category": "Pants",
+    "price": 412,
+    "available": 29,
+    "unit": "pcs",
+    "published": true,
+    "discount": 1,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=4396931109355520"],
+    "requireShipping": false,
+    "sizes": [
+      { "name": "m", "priceDiff": 0, "quantity": 9 },
+      { "name": "l", "priceDiff": 2, "quantity": 5 },
+      { "name": "xl", "priceDiff": 3, "quantity": 5 },
+      { "name": "xxl", "priceDiff": 5, "quantity": 5 },
+      { "name": "xxxl", "priceDiff": 10, "quantity": 5 }
+    ],
+    "colors": [
+      { "name": "#7c1b39", "quantity": 7 },
+      { "name": "#180467", "quantity": 8 },
+      { "name": "#494c0a", "quantity": 7 },
+      { "name": "#4d0150", "quantity": 7 }
+    ],
+    "tags": ["Ergonomic", "Practical", "Bespoke"]
+  }
 ]
