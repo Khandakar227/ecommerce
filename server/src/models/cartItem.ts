@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb";
 import { Types, Schema, model } from "mongoose";
 
 const cartItemModel = new Schema({
@@ -10,8 +11,8 @@ const cartItemModel = new Schema({
     productImage: {type: String},
     productPrice: {type: Number, required: true},
     totalPrice: {type: Number, required: true},
-    color: {name: String, priceDiff: Number},
-    size: {name: String, priceDiff: Number},
+    colorId: ObjectId,
+    sizeId: ObjectId,
 });
 
 const CartItem = model("CartItem", cartItemModel);

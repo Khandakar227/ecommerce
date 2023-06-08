@@ -33,7 +33,7 @@ export type QueryParameters = {
     minPrice?: string;
     vendor?: string;
     tags?: string;
-    [key:string]: any;
+    [key: string]: any;
 }
 /**
  * To process the incoming query parameteres
@@ -60,5 +60,41 @@ export const parseQuery = ({ q, category, maxPrice, minPrice, vendor, tags }: Qu
 
     return query;
 }
+function isInt(value: any) {
+    let x;
+    if (isNaN(value)) {
+        return false;
+    }
+    x = parseFloat(value);
+    return (x | 0) === x;
+}
 
+type Option = {
+    name: string;
+    priceDiff: number;
+    quantity: number;
+    _id: string
+}
+export const validateSizesAndColors = ({ sizes, colors }: { sizes: Option[], colors: Option[] }) => {
+    let SizeIds = new Set();
+    let ColorIds = new Set();
+    let validity = 0;
 
+    if (!sizes) validity++;
+    else if (sizes.every(size => size.name && isInt(size.priceDiff) && isInt(size.quantity) && size._id && SizeIds.add(size._id) ))
+    {
+        validity++;
+        if (SizeIds.size != sizes.length) validity--;
+    }
+    
+    if (!colors) validity++;
+    else if (colors.every(color => color.name && isInt(color.priceDiff) && isInt(color.quantity) && color._id && SizeIds.add(color._id) ))
+    {
+        validity++;
+        if (ColorIds.size != colors.length) validity--;
+
+    }    
+
+    if (validity == 2) return true;
+    else return false;
+}

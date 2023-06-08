@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
 import Product from "../models/product";
 import { validationResult } from "express-validator";
-import { QueryParameters, parseQuery } from "../libs";
+import { QueryParameters, parseQuery, validateSizesAndColors } from "../libs";
+import CartItem from "../models/cartItem";
 
 
 export const getProducts = async (req: Request, res: Response) => {
@@ -81,11 +82,26 @@ export const updateProduct = async (req: Request, res: Response) => {
         const { id } = req.params;
         const { title, desc, vendor, category, price, available, sold, unit, published, discount, rating, ratingCount, imageSrc, requireShipping,  sizes, colors, tags, } = req.body;
 
+        if (!validateSizesAndColors({sizes, colors}))
+        {
+            res.status(400).json({message: "Invalid sizes or colors value"});
+            return;
+        }
         //Update product detail
         const product = await Product.findByIdAndUpdate(id, {
             title, desc, vendor, category, price, available, sold, unit, published, discount, rating, ratingCount, imageSrc, requireShipping, sizes, colors, tags
         });
-
+        if (!product) {
+            res.status(404).json({message: "Product not found"});
+            return;
+        }
+        /**
+         * We need to find and update the cart items also like price, discount, quantity
+         */
+        await CartItem.updateMany({productId: id}, {
+            $set: {productImage: product.imageSrc[0], productName: product.title, productPrice: product.price },
+        });
+        
         res.status(200).json({message: "Success" });
     } catch (error:any) {
         console.log(error.message)
@@ -97,6 +113,9 @@ export const deleteProduct = async (req: Request, res: Response) => {
     try {
         const { id } = req.params;
         await Product.findByIdAndDelete(id);
+        /**
+         * We need to find and delete the cart items for this product
+         */
         res.status(200).json({message: "Success"});
     } catch (error: any) {
         console.log(error.message)

@@ -53,7 +53,8 @@ const updateProductValidations = [
   ),
   ...["colors", "sizes"].map(field =>
     body(field).custom((value) => {
-      if (!Array.isArray(value)) throw new Error("Invalid for " + field);
+      if (!value) return true;
+      if (!Array.isArray(value)) throw new Error("Invalid value for " + field);
       for (const fieldValue of value) {
         if (!fieldValue) return true;
         if (!fieldValue.name || !fieldValue.name.trim()) throw new Error("Invalid for " + field);

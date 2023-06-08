@@ -24,7 +24,11 @@ const Product = model("Product", productModel);
 
 Product.collection
   .createIndex({ title: "text", vendor: "text", tags: "text" })
-  .then(() => console.log("Text index created on Products"))
+  .then(() => console.log("Text index created on Products title vendor tags"))
   .catch((err) => console.log(err));
-
+Product.collection
+  .createIndex({ category: 1, vendor: 1, price: 1 })
+  .then(() => console.log("Index created on Products for category, vendor and price"))
+  .catch((err) => console.log(err));
+  
 export default Product;
