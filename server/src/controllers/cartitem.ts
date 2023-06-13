@@ -62,10 +62,7 @@ export const addToCart = async (req: Request, res: Response) => {
       return;
     }
     // Calculate the selected price for the chosen options
-    let selectedPrice =
-      product[0].price +
-      (product[0].sizes[0].priceDiff || 0) +
-      (product[0].colors.priceDiff || 0);
+    let selectedPrice = product[0].price + (product[0].sizes[0].priceDiff || 0) + (product[0].colors.priceDiff || 0) - (product[0].discount * product[0].price / 100 || 0);
 
     //If the product exists make sure if the product was previously added to the cart or not
     let cartItem = await CartItem.findOne({
@@ -74,7 +71,7 @@ export const addToCart = async (req: Request, res: Response) => {
       colorId,
       userId: res.locals.user._id,
     });
-    
+
     //if added than we only need to update the cartItem
     if (!cartItem) {
       //Add in the info
@@ -120,6 +117,7 @@ export const updateCartItem = async (req: Request, res: Response) => {
     const { quantity } = req.body;
 
     const cartItem = await CartItem.findById(id);
+    
     if (!cartItem) {
       res.status(404).json({ message: "No cart item found" });
       return;
@@ -135,6 +133,19 @@ export const updateCartItem = async (req: Request, res: Response) => {
     if (quantity > product.available) {
       res.status(401).json({ message: "Not enough product available to buy" });
     }
+  } catch (error: any) {
+    console.log(error.message);
+    res.status(500).json({ message: "Something went wrong" });
+  }
+};
+
+export const deleteCartItem = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    await CartItem.findByIdAndDelete(id);
+
+    res.status(200).json({ message: "Success" });
+
   } catch (error: any) {
     console.log(error.message);
     res.status(500).json({ message: "Something went wrong" });

@@ -1,6 +1,8 @@
 import { NextFunction, Request, Response } from "express";
 import csrf from "csurf";
 import { randomBytes, scryptSync, timingSafeEqual } from "crypto";
+import Product from "../models/product";
+import { ObjectId } from "mongodb";
 
 export const csrfProtect = csrf({ cookie: true });
 
@@ -97,4 +99,40 @@ export const validateSizesAndColors = ({ sizes, colors }: { sizes: Option[], col
 
     if (validity == 2) return true;
     else return false;
+}
+
+export const getProductFromCart = async (cartItem:any) => {
+    const products = await Product.aggregate([
+        {
+          $match: {
+            _id: new ObjectId(cartItem.productId),
+            sizes: {
+              $elemMatch: { _id: new ObjectId(cartItem.sizeId) },
+            },
+            colors: {
+              $elemMatch: { _id: new ObjectId(cartItem.colorId) },
+            },
+          },
+        },
+        {
+          $project: {
+            available: 1,
+            imageSrc: 1,
+            price: 1,
+            sizes: {
+              $filter: {
+                input: "$sizes",
+                cond: { $eq: ["$$this._id", new ObjectId(cartItem.sizeId)] },
+              },
+            },
+            colors: {
+              $filter: {
+                input: "$colors",
+                cond: { $eq: ["$$this._id", new ObjectId(cartItem.colorId)] },
+              },
+            },
+          },
+        },
+      ]);
+    return products;     
 }

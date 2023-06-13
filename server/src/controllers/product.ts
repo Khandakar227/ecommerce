@@ -116,6 +116,7 @@ export const deleteProduct = async (req: Request, res: Response) => {
         /**
          * We need to find and delete the cart items for this product
          */
+        await CartItem.deleteMany({productId: id});
         res.status(200).json({message: "Success"});
     } catch (error: any) {
         console.log(error.message)
