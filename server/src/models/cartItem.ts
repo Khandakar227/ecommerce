@@ -10,9 +10,6 @@ const cartItemModel = new Schema({
     productName: {type: String, required: true},
     productImage: {type: String},
     productPrice: {type: Number, required: true},
-    totalPrice: {type: Number, required: true},
-    colorId: ObjectId,
-    sizeId: ObjectId,
 });
 
 const CartItem = model("CartItem", cartItemModel);

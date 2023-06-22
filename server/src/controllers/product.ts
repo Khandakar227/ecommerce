@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import Product from "../models/product";
 import { validationResult } from "express-validator";
-import { QueryParameters, parseQuery, validateSizesAndColors } from "../libs";
+import { QueryParameters, parseQuery } from "../libs";
 import CartItem from "../models/cartItem";
 
 
@@ -42,11 +42,11 @@ export const addProduct = async (req: Request, res: Response) => {
         if (!errors.isEmpty())
             return res.status(400).json({ errors: errors.array()[0].msg });
 
-        const { title, desc, vendor, category, price, available, sold, unit, published, discount, rating, ratingCount, imageSrc, requireShipping, sizes, colors, tags } = req.body;
+        const { title, desc, vendor, category, price, available, sold, unit, published, discount, rating, ratingCount, imageSrc, requireShipping, tags } = req.body;
 
         // Add product
         const product = await Product.create({
-            title, desc, vendor, category, price, available, sold, unit, published, discount, rating, ratingCount, imageSrc, requireShipping, sizes, colors, tags
+            title, desc, vendor, category, price, available, sold, unit, published, discount, rating, ratingCount, imageSrc, requireShipping, tags
         });
         await product.save();
 
@@ -80,17 +80,13 @@ export const updateProduct = async (req: Request, res: Response) => {
             return res.status(400).json({ errors: errors.array()[0].msg });
 
         const { id } = req.params;
-        const { title, desc, vendor, category, price, available, sold, unit, published, discount, rating, ratingCount, imageSrc, requireShipping,  sizes, colors, tags, } = req.body;
+        const { title, desc, vendor, category, price, available, sold, unit, published, discount, rating, ratingCount, imageSrc, requireShipping, tags, } = req.body;
 
-        if (!validateSizesAndColors({sizes, colors}))
-        {
-            res.status(400).json({message: "Invalid sizes or colors value"});
-            return;
-        }
         //Update product detail
         const product = await Product.findByIdAndUpdate(id, {
-            title, desc, vendor, category, price, available, sold, unit, published, discount, rating, ratingCount, imageSrc, requireShipping, sizes, colors, tags
+            title, desc, vendor, category, price, available, sold, unit, published, discount, rating, ratingCount, imageSrc, requireShipping, tags
         });
+
         if (!product) {
             res.status(404).json({message: "Product not found"});
             return;
@@ -99,7 +95,7 @@ export const updateProduct = async (req: Request, res: Response) => {
          * We need to find and update the cart items also like price, discount, quantity
          */
         await CartItem.updateMany({productId: id}, {
-            $set: {productImage: product.imageSrc[0], productName: product.title, productPrice: product.price },
+            $set: { productImage: product.imageSrc[0], productName: product.title, productPrice: product.price },
         });
         
         res.status(200).json({message: "Success" });

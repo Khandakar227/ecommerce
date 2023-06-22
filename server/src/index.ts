@@ -6,6 +6,7 @@ import userRoutes from './routes/user';
 import { csrfProtect } from './libs';
 import productRoutes from './routes/products';
 import cartRoutes from './routes/cartitem';
+import orderRoutes from './routes/order';
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/user', userRoutes);
 app.use('/product', productRoutes);
 app.use('/cart', cartRoutes);
+app.use('/order', orderRoutes);
 
 // this will send a csrfToken to the browser which needs to be saved and send on certain rquests (POST, UPDATE, DELETE)
 app.get('/', csrfProtect, (req: Request, res: Response) => {

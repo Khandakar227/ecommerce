@@ -15,8 +15,6 @@ const productModel = new Schema({
   ratingCount: { type: Number, default: 0 },
   imageSrc: [{ type: String }],
   requireShipping: { type: Boolean, default: false },
-  colors: [{name: String, priceDiff: {type: Number, default: 0}, quantity: {type: Number, default: 0}}],
-  sizes: [{name: String, priceDiff: {type: Number, default: 0}, quantity: {type: Number, default: 0}}],
   tags: [String],
 });
 

@@ -31,16 +31,6 @@ const createProductValidations = [
     .withMessage("You must add atleast 1 tag")
     .isArray({ min: 1, max: 10 })
     .withMessage("Must include atleast 1 tag and maximum 10"),
-  ...["colors", "sizes"].map(field =>
-    body(field).custom((value) => {
-      if (!Array.isArray(value)) throw new Error("Invalid value for " + field);
-      for (const fieldValue of value) {
-        if (!fieldValue) return true;
-        if (!fieldValue.name || !fieldValue.name.trim()) throw new Error("Invalid value for " + field);
-      }
-      return true;
-    })
-  ),
 ];
 
 const updateProductValidations = [
@@ -49,17 +39,6 @@ const updateProductValidations = [
       if (!value) return true;
       if (!Array.isArray(value)) throw new Error("Invalid format for tags");
       return true;
-    })
-  ),
-  ...["colors", "sizes"].map(field =>
-    body(field).custom((value) => {
-      if (!value) return true;
-      if (!Array.isArray(value)) throw new Error("Invalid value for " + field);
-      for (const fieldValue of value) {
-        if (!fieldValue) return true;
-        if (!fieldValue.name || !fieldValue.name.trim()) throw new Error("Invalid for " + field);
-        return true;
-      }
     })
   ),
   ...["desc", "title", "vendor", "category", "unit"].map((field) =>

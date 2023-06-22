@@ -1,272 +1,142 @@
 [
   {
-    "title": "Incredible Concrete Soap",
-    "desc": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-    "vendor": "Kuhic - Halvorson",
+    "title": "Bespoke Steel Shirt",
+    "desc": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+    "vendor": "Hansen Inc",
     "category": "Pants",
-    "price": 241,
-    "available": 29,
-    "unit": "pcs",
-    "published": false,
-    "discount": 29,
-    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=2049236849917952"],
-    "requireShipping": false,
-    "sizes": [
-      { "name": "m", "priceDiff": 0, "quantity": 9 },
-      { "name": "l", "priceDiff": 2, "quantity": 5 },
-      { "name": "xl", "priceDiff": 3, "quantity": 5 },
-      { "name": "xxl", "priceDiff": 5, "quantity": 5 },
-      { "name": "xxxl", "priceDiff": 10, "quantity": 5 }
-    ],
-    "colors": [
-      { "name": "#186371", "quantity": 7 },
-      { "name": "#6b0a67", "quantity": 8 },
-      { "name": "#014946", "quantity": 7 },
-      { "name": "#672510", "quantity": 7 }
-    ],
-    "tags": ["Handcrafted", "Awesome", "Intelligent"]
-  },
-  {
-    "title": "Unbranded Metal Shoes",
-    "desc": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-    "vendor": "Jast, Weimann and Doyle",
-    "category": "Apparel",
-    "price": 797,
-    "available": 91,
-    "unit": "pcs",
-    "published": true,
-    "discount": 5,
-    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=5311337582297088"],
-    "requireShipping": true,
-    "sizes": [
-      { "name": "m", "priceDiff": 0, "quantity": 19 },
-      { "name": "l", "priceDiff": 2, "quantity": 18 },
-      { "name": "xl", "priceDiff": 3, "quantity": 18 },
-      { "name": "xxl", "priceDiff": 5, "quantity": 18 },
-      { "name": "xxxl", "priceDiff": 10, "quantity": 18 }
-    ],
-    "colors": [
-      { "name": "#153506", "quantity": 22 },
-      { "name": "#53614f", "quantity": 25 },
-      { "name": "#4b7e37", "quantity": 22 },
-      { "name": "#67360f", "quantity": 22 }
-    ],
-    "tags": ["Ergonomic", "Intelligent", "Gorgeous"]
-  },
-  {
-    "title": "Unbranded Metal Salad",
-    "desc": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-    "vendor": "Hand - Franecki",
-    "category": "Apparel",
-    "price": 679,
-    "available": 93,
-    "unit": "pcs",
-    "published": true,
-    "discount": 27,
-    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=8541108262928384"],
-    "requireShipping": false,
-    "sizes": [
-      { "name": "m", "priceDiff": 0, "quantity": 21 },
-      { "name": "l", "priceDiff": 2, "quantity": 18 },
-      { "name": "xl", "priceDiff": 3, "quantity": 18 },
-      { "name": "xxl", "priceDiff": 5, "quantity": 18 },
-      { "name": "xxxl", "priceDiff": 10, "quantity": 18 }
-    ],
-    "colors": [
-      { "name": "#6b2705", "quantity": 23 },
-      { "name": "#1c6741", "quantity": 24 },
-      { "name": "#140d20", "quantity": 23 },
-      { "name": "#744735", "quantity": 23 }
-    ],
-    "tags": ["Tasty", "Bespoke", "Refined"]
-  },
-  {
-    "title": "Refined Soft Keyboard",
-    "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-    "vendor": "Runolfsdottir - Medhurst",
-    "category": "Accessories",
-    "price": 383,
+    "price": 651,
     "available": 30,
     "unit": "pcs",
     "published": false,
-    "discount": 5,
-    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=5799507914653696"],
+    "discount": 2,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=8771996951248896"],
     "requireShipping": false,
-    "sizes": [
-      { "name": "m", "priceDiff": 0, "quantity": 6 },
-      { "name": "l", "priceDiff": 2, "quantity": 6 },
-      { "name": "xl", "priceDiff": 3, "quantity": 6 },
-      { "name": "xxl", "priceDiff": 5, "quantity": 6 },
-      { "name": "xxxl", "priceDiff": 10, "quantity": 6 }
-    ],
-    "colors": [
-      { "name": "#0d6a36", "quantity": 7 },
-      { "name": "#29400e", "quantity": 9 },
-      { "name": "#1e0d4c", "quantity": 7 },
-      { "name": "#157e73", "quantity": 7 }
-    ],
-    "tags": ["Fantastic", "Tasty", "Modern"]
+    "tags": ["Oriental", "Awesome", "Handmade"]
   },
   {
-    "title": "Incredible Soft Chips",
-    "desc": "The Football Is Good For Training And Recreational Purposes",
-    "vendor": "Walsh, Bailey and Beer",
+    "title": "Intelligent Metal Pizza",
+    "desc": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+    "vendor": "Doyle LLC",
     "category": "Accessories",
-    "price": 734,
-    "available": 1,
+    "price": 628,
+    "available": 87,
     "unit": "pcs",
     "published": false,
-    "discount": 3,
-    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=1145489988780032"],
+    "discount": 4,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=7627168234340352"],
     "requireShipping": true,
-    "sizes": [
-      { "name": "m", "priceDiff": 0, "quantity": 1 },
-      { "name": "l", "priceDiff": 2, "quantity": 0 },
-      { "name": "xl", "priceDiff": 3, "quantity": 0 },
-      { "name": "xxl", "priceDiff": 5, "quantity": 0 },
-      { "name": "xxxl", "priceDiff": 10, "quantity": 0 }
-    ],
-    "colors": [
-      { "name": "#41746f", "quantity": 0 },
-      { "name": "#697751", "quantity": 1 },
-      { "name": "#492500", "quantity": 0 },
-      { "name": "#055359", "quantity": 0 }
-    ],
-    "tags": ["Gorgeous", "Small", "Generic"]
+    "tags": ["Intelligent", "Licensed", "Recycled"]
   },
   {
-    "title": "Bespoke Fresh Tuna",
-    "desc": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-    "vendor": "Littel - Durgan",
-    "category": "Accessories",
-    "price": 920,
-    "available": 21,
-    "unit": "pcs",
-    "published": true,
-    "discount": 18,
-    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=5947531997478912"],
-    "requireShipping": true,
-    "sizes": [
-      { "name": "m", "priceDiff": 0, "quantity": 5 },
-      { "name": "l", "priceDiff": 2, "quantity": 4 },
-      { "name": "xl", "priceDiff": 3, "quantity": 4 },
-      { "name": "xxl", "priceDiff": 5, "quantity": 4 },
-      { "name": "xxxl", "priceDiff": 10, "quantity": 4 }
-    ],
-    "colors": [
-      { "name": "#3b0d0b", "quantity": 5 },
-      { "name": "#755c5c", "quantity": 6 },
-      { "name": "#7e6c00", "quantity": 5 },
-      { "name": "#532b43", "quantity": 5 }
-    ],
-    "tags": ["Awesome", "Small", "Refined"]
-  },
-  {
-    "title": "Generic Fresh Table",
-    "desc": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-    "vendor": "Walker, Simonis and Hilll",
-    "category": "TShirts",
-    "price": 120,
-    "available": 57,
-    "unit": "pcs",
-    "published": true,
-    "discount": 22,
-    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=8179745197916160"],
-    "requireShipping": true,
-    "sizes": [
-      { "name": "m", "priceDiff": 0, "quantity": 13 },
-      { "name": "l", "priceDiff": 2, "quantity": 11 },
-      { "name": "xl", "priceDiff": 3, "quantity": 11 },
-      { "name": "xxl", "priceDiff": 5, "quantity": 11 },
-      { "name": "xxxl", "priceDiff": 10, "quantity": 11 }
-    ],
-    "colors": [
-      { "name": "#4c3765", "quantity": 14 },
-      { "name": "#59004e", "quantity": 15 },
-      { "name": "#7f315e", "quantity": 14 },
-      { "name": "#166c1d", "quantity": 14 }
-    ],
-    "tags": ["Small", "Ergonomic", "Ergonomic"]
-  },
-  {
-    "title": "Elegant Steel Chicken",
-    "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-    "vendor": "Ward Group",
-    "category": "Apparel",
-    "price": 552,
+    "title": "Electronic Soft Pizza",
+    "desc": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+    "vendor": "Cronin Inc",
+    "category": "Watch",
+    "price": 619,
     "available": 10,
     "unit": "pcs",
     "published": false,
-    "discount": 25,
-    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=6604602619199488"],
-    "requireShipping": false,
-    "sizes": [
-      { "name": "m", "priceDiff": 0, "quantity": 2 },
-      { "name": "l", "priceDiff": 2, "quantity": 2 },
-      { "name": "xl", "priceDiff": 3, "quantity": 2 },
-      { "name": "xxl", "priceDiff": 5, "quantity": 2 },
-      { "name": "xxxl", "priceDiff": 10, "quantity": 2 }
-    ],
-    "colors": [
-      { "name": "#54385e", "quantity": 2 },
-      { "name": "#79616c", "quantity": 4 },
-      { "name": "#70620e", "quantity": 2 },
-      { "name": "#1d222a", "quantity": 2 }
-    ],
-    "tags": ["Small", "Unbranded", "Gorgeous"]
+    "discount": 30,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=2981142112239616"],
+    "requireShipping": true,
+    "tags": ["Ergonomic", "Gorgeous", "Bespoke"]
   },
   {
-    "title": "Electronic Bronze Mouse",
+    "title": "Tasty Steel Fish",
     "desc": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-    "vendor": "Muller - Padberg",
-    "category": "Watch",
-    "price": 891,
-    "available": 34,
+    "vendor": "Luettgen LLC",
+    "category": "TShirts",
+    "price": 303,
+    "available": 18,
     "unit": "pcs",
     "published": false,
-    "discount": 16,
-    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=8628023246979072"],
-    "requireShipping": false,
-    "sizes": [
-      { "name": "m", "priceDiff": 0, "quantity": 10 },
-      { "name": "l", "priceDiff": 2, "quantity": 6 },
-      { "name": "xl", "priceDiff": 3, "quantity": 6 },
-      { "name": "xxl", "priceDiff": 5, "quantity": 6 },
-      { "name": "xxxl", "priceDiff": 10, "quantity": 6 }
-    ],
-    "colors": [
-      { "name": "#546634", "quantity": 8 },
-      { "name": "#21237d", "quantity": 10 },
-      { "name": "#514935", "quantity": 8 },
-      { "name": "#011d07", "quantity": 8 }
-    ],
-    "tags": ["Awesome", "Practical", "Elegant"]
+    "discount": 2,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=2528690195922944"],
+    "requireShipping": true,
+    "tags": ["Practical", "Recycled", "Gorgeous"]
   },
   {
-    "title": "Practical Steel Pizza",
-    "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-    "vendor": "Mann and Sons",
-    "category": "Pants",
-    "price": 412,
-    "available": 29,
+    "title": "Modern Granite Pants",
+    "desc": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+    "vendor": "Kulas - Bahringer",
+    "category": "TShirts",
+    "price": 12,
+    "available": 21,
+    "unit": "pcs",
+    "published": false,
+    "discount": 4,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=139108607328256"],
+    "requireShipping": true,
+    "tags": ["Oriental", "Small", "Electronic"]
+  },
+  {
+    "title": "Modern Cotton Chicken",
+    "desc": "The Football Is Good For Training And Recreational Purposes",
+    "vendor": "Torphy - Blanda",
+    "category": "Jacket",
+    "price": 742,
+    "available": 80,
     "unit": "pcs",
     "published": true,
-    "discount": 1,
-    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=4396931109355520"],
+    "discount": 12,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=7315572484210688"],
     "requireShipping": false,
-    "sizes": [
-      { "name": "m", "priceDiff": 0, "quantity": 9 },
-      { "name": "l", "priceDiff": 2, "quantity": 5 },
-      { "name": "xl", "priceDiff": 3, "quantity": 5 },
-      { "name": "xxl", "priceDiff": 5, "quantity": 5 },
-      { "name": "xxxl", "priceDiff": 10, "quantity": 5 }
-    ],
-    "colors": [
-      { "name": "#7c1b39", "quantity": 7 },
-      { "name": "#180467", "quantity": 8 },
-      { "name": "#494c0a", "quantity": 7 },
-      { "name": "#4d0150", "quantity": 7 }
-    ],
-    "tags": ["Ergonomic", "Practical", "Bespoke"]
+    "tags": ["Incredible", "Refined", "Oriental"]
+  },
+  {
+    "title": "Recycled Wooden Salad",
+    "desc": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+    "vendor": "Koss - Wisoky",
+    "category": "Jacket",
+    "price": 710,
+    "available": 34,
+    "unit": "pcs",
+    "published": true,
+    "discount": 13,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=32701004382208"],
+    "requireShipping": false,
+    "tags": ["Refined", "Licensed", "Ergonomic"]
+  },
+  {
+    "title": "Handcrafted Rubber Hat",
+    "desc": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+    "vendor": "Rogahn LLC",
+    "category": "TShirts",
+    "price": 762,
+    "available": 1,
+    "unit": "pcs",
+    "published": false,
+    "discount": 22,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=2722282396975104"],
+    "requireShipping": true,
+    "tags": ["Sleek", "Modern", "Refined"]
+  },
+  {
+    "title": "Small Frozen Computer",
+    "desc": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+    "vendor": "Littel LLC",
+    "category": "TShirts",
+    "price": 245,
+    "available": 74,
+    "unit": "pcs",
+    "published": false,
+    "discount": 27,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=2968161905278976"],
+    "requireShipping": true,
+    "tags": ["Intelligent", "Handcrafted", "Ergonomic"]
+  },
+  {
+    "title": "Recycled Steel Chair",
+    "desc": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+    "vendor": "Aufderhar Group",
+    "category": "Pants",
+    "price": 242,
+    "available": 53,
+    "unit": "pcs",
+    "published": true,
+    "discount": 20,
+    "imageSrc": ["https://loremflickr.com/400/450/cats?lock=5799902814666752"],
+    "requireShipping": true,
+    "tags": ["Rustic", "Handcrafted", "Rustic"]
   }
 ]

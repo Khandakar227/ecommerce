@@ -12,8 +12,6 @@ const orderModel = new Schema({
       productId: Types.ObjectId,
       productName: String,
       productImage: String,
-      color: { name: String, priceDiff: Number, quantity: Number },
-      size: { name: String, priceDiff: Number, quantity: Number },
       quantity: Number,
       productPrice: Number,
       totalPrice: Number,
@@ -22,6 +20,6 @@ const orderModel = new Schema({
   totalPrice: Number,
 });
 
-const Order = model("CartItem", orderModel);
+const Order = model("Order", orderModel);
 
 export default Order;

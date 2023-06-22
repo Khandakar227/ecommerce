@@ -2,137 +2,156 @@ import { NextFunction, Request, Response } from "express";
 import csrf from "csurf";
 import { randomBytes, scryptSync, timingSafeEqual } from "crypto";
 import Product from "../models/product";
-import { ObjectId } from "mongodb";
+import { Types } from "mongoose";
 
 export const csrfProtect = csrf({ cookie: true });
 
-
 export function hashPassword(password: string) {
-    const salt = randomBytes(16).toString("hex");
-    const hashedPassword = scryptSync(password, salt, 64).toString("hex");
+  const salt = randomBytes(16).toString("hex");
+  const hashedPassword = scryptSync(password, salt, 64).toString("hex");
 
-    return `${salt}:${hashedPassword}`
+  return `${salt}:${hashedPassword}`;
 }
 
-export const checkPasswordMatch = (password: string, hashedPassword: string) => {
-    const [salt, key] = hashedPassword.split(":");
-    const hashedBuffer = scryptSync(password, salt, 64);
-    const keyBuffer = Buffer.from(key, "hex");
-    const match = timingSafeEqual(hashedBuffer, keyBuffer);
+export const checkPasswordMatch = (
+  password: string,
+  hashedPassword: string
+) => {
+  const [salt, key] = hashedPassword.split(":");
+  const hashedBuffer = scryptSync(password, salt, 64);
+  const keyBuffer = Buffer.from(key, "hex");
+  const match = timingSafeEqual(hashedBuffer, keyBuffer);
 
-    if (match) return true;
-    return false;
-}
+  if (match) return true;
+  return false;
+};
 
 export type QueryParameters = {
-    q?: string;
-    limit?: string;
-    sortBy?: string;
-    sortOrder?: 'asc' | 'desc';
-    offset?: string;
-    category?: string;
-    maxPrice?: string;
-    minPrice?: string;
-    vendor?: string;
-    tags?: string;
-    [key: string]: any;
-}
+  q?: string;
+  limit?: string;
+  sortBy?: string;
+  sortOrder?: "asc" | "desc";
+  offset?: string;
+  category?: string;
+  maxPrice?: string;
+  minPrice?: string;
+  vendor?: string;
+  tags?: string;
+  [key: string]: any;
+};
 /**
  * To process the incoming query parameteres
  */
-export const parseQuery = ({ q, category, maxPrice, minPrice, vendor, tags }: QueryParameters) => {
-    let query: any = {};
+export const parseQuery = ({
+  q,
+  category,
+  maxPrice,
+  minPrice,
+  vendor,
+  tags,
+}: QueryParameters) => {
+  let query: any = {};
 
-    if (q) query = { $text: { $search: q.toString() } }
+  if (q) query = { $text: { $search: q.toString() } };
 
-    if (maxPrice && minPrice) query.price = { $gte: minPrice, $lte: maxPrice };
+  if (maxPrice && minPrice) query.price = { $gte: minPrice, $lte: maxPrice };
+  else if (maxPrice) query.price = { $lte: maxPrice };
+  else if (minPrice) query.price = { $gte: minPrice };
 
-    else if (maxPrice) query.price = { $lte: maxPrice };
+  if (category) query.category = category;
 
-    else if (minPrice) query.price = { $gte: minPrice };
+  if (vendor) query.vendor = vendor;
 
-    if (category) query.category = category;
+  if (tags)
+    // Match any of the specified tags
+    query.tags = { $in: tags.split(",") };
 
-    if (vendor) query.vendor = vendor;
-
-    if (tags)
-        // Match any of the specified tags
-        query.tags = { $in: tags.split(',') };
-
-
-    return query;
-}
-function isInt(value: any) {
-    let x;
-    if (isNaN(value)) {
-        return false;
-    }
-    x = parseFloat(value);
-    return (x | 0) === x;
-}
-
-type Option = {
-    name: string;
-    priceDiff: number;
-    quantity: number;
-    _id: string
-}
-export const validateSizesAndColors = ({ sizes, colors }: { sizes: Option[], colors: Option[] }) => {
-    let SizeIds = new Set();
-    let ColorIds = new Set();
-    let validity = 0;
-
-    if (!sizes) validity++;
-    else if (sizes.every(size => size.name && isInt(size.priceDiff) && isInt(size.quantity) && size._id && SizeIds.add(size._id) ))
-    {
-        validity++;
-        if (SizeIds.size != sizes.length) validity--;
-    }
-    
-    if (!colors) validity++;
-    else if (colors.every(color => color.name && isInt(color.priceDiff) && isInt(color.quantity) && color._id && SizeIds.add(color._id) ))
-    {
-        validity++;
-        if (ColorIds.size != colors.length) validity--;
-
-    }    
-
-    if (validity == 2) return true;
-    else return false;
+  return query;
+};
+export function isInt(value: any) {
+  let x;
+  if (isNaN(value)) {
+    return false;
+  }
+  x = parseFloat(value);
+  return (x | 0) === x;
 }
 
-export const getProductFromCart = async (cartItem:any) => {
-    const products = await Product.aggregate([
-        {
-          $match: {
-            _id: new ObjectId(cartItem.productId),
-            sizes: {
-              $elemMatch: { _id: new ObjectId(cartItem.sizeId) },
+type OrderedItemProp = {
+  productId: Types.ObjectId;
+  productName: string;
+  productImage: string;
+  productPrice: number;
+  quantity: any;
+  totalPrice: number;
+};
+
+export async function getOrderedItemsAndTotalPrice(
+  cartItems: any[],
+) {
+  let totalPrice = 0;
+  let orderedItems: OrderedItemProp[] = [];
+  await Promise.all(
+    cartItems.map(async (item) => {
+      const product = await Product.findById(item.productId);
+  
+      if (!product) return;
+  
+      const discount = (product.price * (product.discount || 0)) / 100;
+      const individualPrice = (product.price - discount) * item.quantity;
+      totalPrice += individualPrice;
+  
+      //Negate the quantity;
+      product.available -= item.quantity;
+      product.sold += item.quantity;
+  
+      orderedItems.push({
+        productId: product._id,
+        productName: product.title,
+        productImage: product.imageSrc[0],
+        productPrice: product.price,
+        quantity: item.quantity,
+        totalPrice: Math.round(individualPrice),
+      });
+      await product.save();
+    })
+  )
+
+  return {items: orderedItems, totalPrice};
+}
+/*
+    // Check if product with the id, size, color value and quantity less than available matches or not
+    const product = await Product.aggregate([
+      {
+        $match: {
+          _id: new ObjectId(productId),
+          sizes: {
+            $elemMatch: { _id: new ObjectId(sizeId) },
+          },
+          colors: {
+            $elemMatch: { _id: new ObjectId(colorId) },
+          },
+        },
+      },
+      {
+        $project: {
+          title: 1,
+          available: 1,
+          imageSrc: 1,
+          price: 1,
+          sizes: {
+            $filter: {
+              input: "$sizes",
+              cond: { $eq: ["$$this._id", new ObjectId(sizeId)] },
             },
-            colors: {
-              $elemMatch: { _id: new ObjectId(cartItem.colorId) },
+          },
+          colors: {
+            $filter: {
+              input: "$colors",
+              cond: { $eq: ["$$this._id", new ObjectId(colorId)] },
             },
           },
         },
-        {
-          $project: {
-            available: 1,
-            imageSrc: 1,
-            price: 1,
-            sizes: {
-              $filter: {
-                input: "$sizes",
-                cond: { $eq: ["$$this._id", new ObjectId(cartItem.sizeId)] },
-              },
-            },
-            colors: {
-              $filter: {
-                input: "$colors",
-                cond: { $eq: ["$$this._id", new ObjectId(cartItem.colorId)] },
-              },
-            },
-          },
-        },
-      ]);
-    return products;     
-}
+      },
+    ]);
+*/
