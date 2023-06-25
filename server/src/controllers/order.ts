@@ -14,6 +14,8 @@ export const placeOrder = async (req: Request, res: Response) => {
         message: error.array()[0].msg,
       });
 
+    const {address} = req.body;
+
     if (!res.locals.user)
       return res.status(401).json({ message: "User not verified" });
 
@@ -31,6 +33,7 @@ export const placeOrder = async (req: Request, res: Response) => {
       status: "not-confirmed",
       items: orderDetails.items,
       totalPrice: Math.round(orderDetails.totalPrice),
+      address
     });
     await order.save();
     
@@ -70,3 +73,18 @@ export const updateOrder = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Something went wrong" });
   }
 };
+
+export const getOrder = async (req: Request, res: Response) => {
+  try {
+    if (!res.locals.user)
+    return res.status(401).json({ message: "User not verified" });
+
+    const userId = res.locals.user._id;
+
+    const orders = await Order.find({userId});
+  
+    res.status(200).json({orders});
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong" });
+  }
+}

@@ -56,16 +56,16 @@ const updateProductValidations = [
 productRoutes.get("/", getProducts);
 productRoutes.post(
   "/create",
-  ...createProductValidations,
   csrfProtect,
+  ...createProductValidations,
   checkAdmin,
   addProduct
 );
 productRoutes.get("/:id", getProduct);
 productRoutes.put(
   "/:id",
-  ...updateProductValidations,
   csrfProtect,
+  ...updateProductValidations,
   checkAdmin,
   updateProduct
 );

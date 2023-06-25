@@ -119,6 +119,23 @@ export async function getOrderedItemsAndTotalPrice(
 
   return {items: orderedItems, totalPrice};
 }
+
+export const getUserDataFromBody = (body:any) => {
+  let data:any = {}
+  const { name, phoneNumber, displayPhoto, address } = body;
+  if (name) data.name = name;
+  if (phoneNumber) data.phoneNumber = phoneNumber;
+  if (displayPhoto) data.displayPhoto = displayPhoto;
+  if (address) {
+    if (address.apartment) data.address.apartment = address.apartment;
+    if (address.area) data.address.area = address.area;
+    if (address.city) data.address.city = address.city;
+    if (address.country) data.address.country = address.country;
+  }
+
+  return data;
+}
+
 /*
     // Check if product with the id, size, color value and quantity less than available matches or not
     const product = await Product.aggregate([

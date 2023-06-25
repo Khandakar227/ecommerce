@@ -3,7 +3,7 @@ import { validationResult } from "express-validator";
 
 import jwt from "jsonwebtoken";
 import User from "../models/user";
-import { checkPasswordMatch, hashPassword } from "../libs";
+import { checkPasswordMatch, getUserDataFromBody, hashPassword } from "../libs";
 
 export const signUp = async (req: Request, res: Response) => {
     try {
@@ -58,9 +58,9 @@ export const login = async (req: Request, res: Response) => {
         const errors = validationResult(req);
 
         if (!errors.isEmpty())
-            return res.status(400).json({ errors: errors.array()[0].msg });
+            return res.status(400).json({ message: errors.array()[0].msg });
 
-        const { email, password } = req.body;
+        const { email, password } = req.body;   const updateData = getUserDataFromBody(req.body);
 
         const user = await User.findOne({ email });
         if (!user) return res.status(401).json({ message: "Incorrect email or password" });
@@ -91,9 +91,13 @@ export const login = async (req: Request, res: Response) => {
 export const updateUser = async (req: Request, res: Response) => {
     try {
         const errors = validationResult(req);
-        if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array()[0].msg });
+        if (!errors.isEmpty()) return res.status(400).json({ message: errors.array()[0].msg });
 
-        res.status(200).json({ message: "updated successfully", user: res.locals.user });
+        const updateData = getUserDataFromBody(req.body);
+        const userId = res.locals.user._id;
+        const user = await User.findByIdAndUpdate(userId, updateData);
+
+        res.status(200).json({ message: "updated successfully", user });
 
     } catch (error) {
 

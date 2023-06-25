@@ -9,7 +9,8 @@ const userModel = new Schema({
     role: { type: String, required: true },
     displayPhoto: { type: String },
     address: {
-        houseNo: { type: String },
+        apartment: { type: String },
+        area: { type: String },
         city: { type: String },
         country: { type: String },
     },

@@ -17,7 +17,17 @@ const orderModel = new Schema({
       totalPrice: Number,
     },
   ],
+  paymentInfo: {
+    type: String,
+    creditCardNumber: String,
+  },
   totalPrice: Number,
+  address: {
+    apartment: String,
+    area: String,
+    city: String,
+    postalCode: String,
+  }
 });
 
 const Order = model("Order", orderModel);

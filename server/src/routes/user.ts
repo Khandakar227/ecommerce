@@ -1,7 +1,7 @@
 import express from "express";
 import { body, check } from "express-validator";
 import { login, signUp, updateUser } from "../controllers/user";
-import { verifyUserCookie } from "../middlewares/verifyUser";
+import { checkUser, verifyUserCookie } from "../middlewares/verifyUser";
 import { csrfProtect } from "../libs";
 
 const userRoutes = express.Router();
@@ -28,9 +28,9 @@ userRoutes.post(
 
 userRoutes.put(
     "/update",
-    body("email").exists().withMessage("email is required"),
     csrfProtect,
-    verifyUserCookie,
+    body("email").exists().withMessage("email is required"),
+    checkUser,
     updateUser
 );
 
