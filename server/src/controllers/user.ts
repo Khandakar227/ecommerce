@@ -56,13 +56,12 @@ export const signUp = async (req: Request, res: Response) => {
 export const login = async (req: Request, res: Response) => {
     try {
         const errors = validationResult(req);
-
         if (!errors.isEmpty())
             return res.status(400).json({ message: errors.array()[0].msg });
 
-        const { email, password } = req.body;   const updateData = getUserDataFromBody(req.body);
-
-        const user = await User.findOne({ email });
+        const { email, password, role } = req.body;
+        
+        const user = await User.findOne({ email, role });
         if (!user) return res.status(401).json({ message: "Incorrect email or password" });
 
         const isPasswordMatched = checkPasswordMatch(password, user.password as string)
@@ -76,11 +75,11 @@ export const login = async (req: Request, res: Response) => {
             email: user.email, _id: user._id, name: user.name, role: user.role, verified: user.verified
         }
 
-        const token = jwt.sign(userInfo, process.env.JWT_SECRET_KEY as string, { expiresIn: 3_600_000 * 3 });
+        const token = jwt.sign(userInfo, process.env.JWT_SECRET_KEY as string, { expiresIn: 3_600_000 * 4 });
 
         res.status(200)
-            .cookie('access_token', token, { maxAge: 3_600_000 * 3, httpOnly: true })
-            .json({ message: "success", user: {...userInfo, signedInAt: user.signedInAt, expiresIn: 3_600_000 * 3} });
+            .cookie('access_token', token, { maxAge: 3_600_000 * 4, httpOnly: true })
+            .json({ message: "success", user: {...userInfo, signedInAt: user.signedInAt, expiresIn: 3_600_000 * 4} });
 
     } catch (error) {
         console.log(error);
@@ -100,6 +99,16 @@ export const updateUser = async (req: Request, res: Response) => {
         res.status(200).json({ message: "updated successfully", user });
 
     } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Something went wrong" });
+    }
+}
 
+export const logout = async (req: Request, res: Response) => {
+    try {
+        res.status(200).clearCookie('access_token').json({message: "Logged out"});
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Something went wrong" })
     }
 }

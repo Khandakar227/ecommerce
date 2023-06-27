@@ -1,6 +1,6 @@
 import express from "express";
 import { body, check } from "express-validator";
-import { login, signUp, updateUser } from "../controllers/user";
+import { login, logout, signUp, updateUser } from "../controllers/user";
 import { checkUser, verifyUserCookie } from "../middlewares/verifyUser";
 import { csrfProtect } from "../libs";
 
@@ -34,4 +34,5 @@ userRoutes.put(
     updateUser
 );
 
+userRoutes.post("/logout", csrfProtect, logout);
 export default userRoutes;

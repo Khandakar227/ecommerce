@@ -2,16 +2,20 @@ import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 import { connect } from "mongoose";
 import cookieParser from "cookie-parser";
+import cors from 'cors';
 import userRoutes from './routes/user';
 import { csrfProtect } from './libs';
 import productRoutes from './routes/products';
 import cartRoutes from './routes/cartitem';
 import orderRoutes from './routes/order';
 
+
 dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT || 8080;
+
+app.use(cors({origin: process.env.CLIENT_URL, credentials: true}));
 
 connect(process.env.MONGODB_URL as string,
     {
