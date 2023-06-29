@@ -9,7 +9,7 @@ export type Req = {
 
 export const request = async (req?: Req) => {
   const _csrf = localStorage.getItem("_csrf");
-
+  
   return await axios({
     method: req?.method || "GET",
     url: req?.url || API_ENDPOINT,

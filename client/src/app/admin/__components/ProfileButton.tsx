@@ -27,7 +27,7 @@ function ProfileButton() {
         </button>
         <div className="absolute bg-white rounded-md p-2 min-w-[180px] shadow-sm border right-0 transition-all -z-10 opacity-0 scale-50 group-hover:scale-100 group-hover:opacity-100 group-hover:z-10">
             <ul className="grid justify-center items-center">
-              <li className="border-b hover:bg-green-100 transition-all"><Link href="/admin/dashboard/profile" className="block w-full p-2"> View Profile </Link></li>
+              <li className="border-b hover:bg-green-100 transition-all"><Link href="/admin/profile" className="block w-full p-2"> View Profile </Link></li>
               <li className="border-b hover:bg-green-100 transition-all"><button onClick={handleLogout} className="w-full text-left p-2"> Log out </button></li>
             </ul>
         </div>

@@ -1,6 +1,6 @@
-import DisplayPhoto from "./DisplayPhoto"
-import ProfileInfo from "./ProfileInfo"
-import SecurityInfo from "./SecurityInfo"
+import DisplayPhoto from "./__components/DisplayPhoto"
+import ProfileInfo from "./__components/ProfileInfo"
+import SecurityInfo from "./__components/SecurityInfo"
 
 function Profile() {
   return (

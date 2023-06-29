@@ -127,6 +127,7 @@ export const getUserDataFromBody = (body:any) => {
   if (phoneNumber) data.phoneNumber = phoneNumber;
   if (displayPhoto) data.displayPhoto = displayPhoto;
   if (address) {
+    if (!data.address) data.address = {};
     if (address.apartment) data.address.apartment = address.apartment;
     if (address.area) data.address.area = address.area;
     if (address.city) data.address.city = address.city;

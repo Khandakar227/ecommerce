@@ -13,7 +13,9 @@ const signUpValidations = [
 const loginValidations = [
     body("email").exists().withMessage("email is required"), body("password").exists().withMessage("password is required"),
 ]
-
+const updateUserValidations = [
+    body("name").exists().withMessage("Name is required"), body("name").notEmpty().withMessage("Name is required"),
+]
 userRoutes.post(
     '/signup',
     ...signUpValidations,
@@ -29,7 +31,7 @@ userRoutes.post(
 userRoutes.put(
     "/update",
     csrfProtect,
-    body("email").exists().withMessage("email is required"),
+    ...updateUserValidations,
     checkUser,
     updateUser
 );

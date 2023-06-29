@@ -12,7 +12,7 @@ import { request } from ".";
 import { API_ENDPOINT } from "./config";
 import { useRouter } from "next/navigation";
 
-export type UserType = {
+export interface UserType {
   name: string;
   phoneNumber: string;
   email: string;
@@ -32,7 +32,7 @@ export type UserType = {
 };
 type UserContextType = {
   user: UserType;
-  setUser: Dispatch<SetStateAction<UserType | any>>;
+  setUser: (user: UserType) => void;
   signUp: Function;
   signIn: (name: string, password: string, role: "admin" | "user") => void;
   logOut: Function;
@@ -50,7 +50,7 @@ export default function UserContextProvider({
 }: {
   children: ReactNode;
 }) {
-  const [user, setUser] = useState({} as UserType);
+  const [user, _setUser] = useState({} as UserType);
   const router = useRouter();
 
   useEffect(() => {
@@ -65,7 +65,7 @@ export default function UserContextProvider({
         return;
       }
       setUser(UserData);
-      console.log("user")
+      // console.log(UserData)
     } catch (error) {
       console.log(error);
     }
@@ -104,6 +104,11 @@ export default function UserContextProvider({
       console.log(error);
     }
   };
+
+  function setUser (user: UserType) {
+    _setUser(user);
+    localStorage.setItem('user', JSON.stringify(user));
+  }
   return (
     <userContext.Provider value={{ user, setUser, signIn, signUp, logOut }}>
       {children}
