@@ -16,6 +16,7 @@ const productModel = new Schema({
   imageSrc: [{ type: String }],
   requireShipping: { type: Boolean, default: false },
   tags: [String],
+  createdAt: { type: Date, default: Date.now, required: true },
 });
 
 const Product = model("Product", productModel);
